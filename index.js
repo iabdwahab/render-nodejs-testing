@@ -20,6 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.static("dist"));
 let notes = [
   {
     id: "1",
