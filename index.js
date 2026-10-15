@@ -20,7 +20,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static("dist"));
 let notes = [
   {
     id: "1",
@@ -39,15 +38,7 @@ let notes = [
   },
 ];
 
-app.get("/", (request, response, next) => {
-  response.send("<h1>HELLOW, WORLDs!</h1>");
-  next();
-});
-
-app.get("/", (req, res, next) => {
-  console.log("HELLO");
-  res.send("s");
-});
+app.use(express.static("dist"));
 
 app.get("/api/notes", (request, response) => {
   response.json(notes);
